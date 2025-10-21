@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade" version="4.0">
+    <name>plg_system_otarola_multicat</name>
+    <creationDate>2024-05-18</creationDate>
+    <author>Otarola</author>
+    <authorEmail>extensions@otarola.dev</authorEmail>
+    <authorUrl>https://otarola.dev</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_OTAROLA_MULTICAT_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="otarola_multicat">otarola_multicat.php</filename>
+        <folder>helper</folder>
+        <folder>language</folder>
+        <folder>services</folder>
+        <folder>sql</folder>
+        <filename>otarola_multicat.xml</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_otarola_multicat.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_otarola_multicat.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="general">
+                <field
+                    name="enable_logging"
+                    type="radio"
+                    default="0"
+                    label="PLG_SYSTEM_OTAROLA_MULTICAT_PARAM_ENABLE_LOGGING"
+                    description="PLG_SYSTEM_OTAROLA_MULTICAT_PARAM_ENABLE_LOGGING_DESC"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <sql>
+        <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        <updates>
+            <folder>sql/updates</folder>
+        </updates>
+    </sql>
+</extension>
